@@ -35,7 +35,7 @@ public class FightUi: IFightUi
                 ui.ShowMessage("Megtámadtad!", 2);
                 int[] hp = fightHandler.Fight(enemy, player);
                 ui.ShowMessage($"Megsebezted: {hp[0]}hp --> {hp[1]}hp", top+3);
-                Console.ReadKey();
+    
                 if (hp[1] <= 0)
                 {
                     ui.ShowMessage($"Megölted: {enemy.nev}",top+3);
@@ -45,8 +45,24 @@ public class FightUi: IFightUi
                 }
                 else
                 {
+                    Random chane = new Random();
+                    if (chane.Next(0, 100) <= 90)
+                    {
+                        ui.ShowMessage($"{enemy.nev} visszatámadott!",top+4);
+                        int[] player_hp = fightHandler.Fight(player, enemy);
+                        ui.ShowMessage($"Megsebzett: {player_hp[0]}hp --> {player_hp[1]}hp", top+5);
+                        if (player_hp[1] <= 0)
+                        {
+                            ui.ShowMessage("Sajnos meghaltál :/ majd legközelebb...");
+                            Console.ReadKey();
+                            GameEngine.End();
+                        }
+                    }
+                    Console.ReadKey();
                     ShowFightUi(enemy, player,0,map);
+          
                 }
+         
 
                 break;
             case "2":
