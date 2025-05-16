@@ -11,8 +11,7 @@ public class GameEngine
     public GameEngine(Map map)
     {
         this.map = map;
-        
-        player = map.objects.Find(obj => obj is Player) as Player;
+        player = map.objects.FirstOrDefault(obj => obj is Player) as Player;
     }
 
     MapRenderer mapRenderer = new MapRenderer();
@@ -38,6 +37,7 @@ public class GameEngine
         Console.Clear();
         ui.ShowMessage("A játékos időnek vége");
         gameOver = true;
+        Console.ReadKey();
     }
 
     public static void isOutOfBOunds(Map map, IUi ui, Player player,int[] irany)

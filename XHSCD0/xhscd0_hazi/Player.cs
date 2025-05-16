@@ -1,6 +1,6 @@
 namespace xhscd0_hazi;
 
-public class Player : Entity
+public record Player : Entity
 {
     public char def_icon = ' ';
 

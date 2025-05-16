@@ -1,6 +1,6 @@
 namespace xhscd0_hazi;
 
-public class Item:Entity
+public record Item:Entity
 {
     public new static char icon = 't';
 

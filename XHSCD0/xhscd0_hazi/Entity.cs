@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace xhscd0_hazi;
 
-public class Entity
+public record Entity
 {
     public int x { get; set; }
     public int y { get; set; }

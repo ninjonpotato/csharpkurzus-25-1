@@ -9,9 +9,10 @@ public class FightUi: IFightUi
     {
         Dictionary<string, string> options = new Dictionary<string, string>();
         options.Add("-","Opciók:");
-        options.Add("1","Megtámadod:");
+        options.Add("1","Megtámadod");
         options.Add("2","Elmenekülsz");
         option.setOptionList(options);
+        MapRenderer.top = Console.GetCursorPosition().Top;
     }
 
     public void ShowFightUi(Enemy enemy, Player player, int top = 0)
@@ -21,14 +22,13 @@ public class FightUi: IFightUi
         entityStatUI.ShowEntityStatUI(player);
         ui.ShowMessage($"Harcba keveredtél:{enemy.nev}", 1);
         top = option.ShowOptions(ui);
-        ui.ShowMessage(new string(' ', Console.WindowWidth), top);
         string valasz = ReadInput.Read();
         switch (valasz)
         {
             case "1":
                 ui.ShowMessage("Megtámadtad!", 2);
                 int[] hp = fightHandler.Fight(enemy, player);
-                ui.ShowMessage($"Megsebezted: {hp[0]}hp --> {hp[1]}hp", top+2);
+                ui.ShowMessage($"Megsebezted: {hp[0]}hp --> {hp[1]}hp", top+3);
                 if (hp[1] <= 0)
                 {
                     ui.ShowMessage($"Megölted: {enemy.nev}",top+3);
@@ -40,12 +40,12 @@ public class FightUi: IFightUi
 
                 break;
             case "2":
-                ui.ShowMessage("Megpróbálsz elmenekülni, ám az ellenfeled gyorsabb volt nálad és lesujtott rád.");
+                ui.ShowMessage("Megpróbálsz elmenekülni, ám az ellenfeled gyorsabb volt nálad és lesujtott rád.",top);
                 Console.ReadKey();
                 GameEngine.End();
                 break;
             default:
-                ui.ShowMessage("Ilyen opció nincs.");
+                ui.ShowMessage("Ilyen opció nincs.",top);
                 ShowFightUi(enemy, player);
                 break;
 

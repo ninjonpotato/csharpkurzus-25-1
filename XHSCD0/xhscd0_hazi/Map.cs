@@ -6,7 +6,7 @@ public class Map
     public int height { get; set; }
     public static char wallIcon { get; set; }
     public static char tileIcon { get; set; }
-    public List<object> objects = new List<object>();
+    public IEntityTarolo<Entity> objects = new EntityTarolo<Entity>();
     public char[,] MapView = null;
     public MapRenderer mapRenderer = new MapRenderer();
 
