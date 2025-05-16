@@ -1,0 +1,135 @@
+[
+  {
+    "type": "Entity",
+    "x": 5,
+    "y": 1,
+    "icon": "#"
+  },
+  {
+    "type": "Entity",
+    "x": 11,
+    "y": 1,
+    "icon": "#"
+  },
+  {
+    "type": "Entity",
+    "x": 99,
+    "y": 99,
+    "icon": "#"
+  },
+  {
+    "type": "Entity",
+    "x": 2,
+    "y": 2,
+    "icon": "#"
+  },
+  {
+    "type": "Entity",
+    "x": 3,
+    "y": 2,
+    "icon": "#"
+  },
+  {
+    "type": "Entity",
+    "x": 4,
+    "y": 2,
+    "icon": "#"
+  },
+  {
+    "type": "Entity",
+    "x": 5,
+    "y": 2,
+    "icon": "#"
+  },
+  {
+    "type": "Entity",
+    "x": 6,
+    "y": 2,
+    "icon": "#"
+  },
+  {
+    "type": "Entity",
+    "x": 7,
+    "y": 2,
+    "icon": "#"
+  },
+  {
+    "type": "Entity",
+    "x": 9,
+    "y": 2,
+    "icon": "#"
+  },
+  {
+    "type": "Entity",
+    "x": 10,
+    "y": 2,
+    "icon": "#"
+  },
+  {
+    "type": "Entity",
+    "x": 11,
+    "y": 2,
+    "icon": "#"
+  },
+  {
+    "type": "Entity",
+    "x": 13,
+    "y": 2,
+    "icon": "#"
+  },
+  {
+    "type": "Enemy",
+    "x": 3,
+    "y": 1,
+    "nev": "Béla",
+    "icon": "e",
+    "hp": 5,
+    "dmg": 0
+  },
+  {
+    "type": "Enemy",
+    "x": 12,
+    "y": 1,
+    "nev": "Béla",
+    "icon": "e",
+    "hp": 2,
+    "dmg": 1
+  },
+  {
+    "type": "Enemy",
+    "x": 8,
+    "y": 1,
+    "nev": "Nagy Béla",
+    "icon": "e",
+    "hp": 20,
+    "dmg": 5
+  },
+  {
+    "type": "EndGoal",
+    "x": 6,
+    "y": 1,
+    "nev": "Nagy Béla",
+    "icon": "X",
+    "hp": 20,
+    "dmg": 5
+  },
+  {
+    "type": "Item",
+    "x": 13,
+    "y": 1,
+    "hp": 10,
+    "dmg": 3,
+    "icon": "t",
+    "nev": "Hideg kóla"
+  },
+  {
+    "type": "Player",
+    "x": 13,
+    "y": 3,
+    "hp": 10,
+    "dmg": 1,
+    "icon": "O",
+    "nev": "Erős Pista"
+  }
+  
+]
