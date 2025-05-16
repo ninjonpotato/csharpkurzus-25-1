@@ -9,6 +9,8 @@ public record Entity
     public int y { get; set; }
 
     public char icon { get; set; }
+    public char def_icon { get; set; }
+    public char fight_icon { get; set; }
     public int hp { get; set; }
     public int dmg{ get; set; }
     public string nev{ get; set; }

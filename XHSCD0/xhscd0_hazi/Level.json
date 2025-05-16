@@ -129,6 +129,8 @@
     "hp": 10,
     "dmg": 1,
     "icon": "O",
+    "def_icon": "O",
+    "fight_icon": "F",
     "nev": "Erős Pista"
   }
   

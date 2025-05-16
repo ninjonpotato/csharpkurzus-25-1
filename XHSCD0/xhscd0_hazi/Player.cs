@@ -2,12 +2,9 @@ namespace xhscd0_hazi;
 
 public record Player : Entity
 {
-    public char def_icon = ' ';
-
-    public void InFight()
+    public  void InFight()
     {
-        def_icon = icon;
-        icon = 'F';
+        icon = fight_icon;
     }
     public void OutFight()
     {

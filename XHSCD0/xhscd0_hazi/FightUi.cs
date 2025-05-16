@@ -15,12 +15,18 @@ public class FightUi: IFightUi
         MapRenderer.top = Console.GetCursorPosition().Top;
     }
 
-    public void ShowFightUi(Enemy enemy, Player player, int top = 0)
+    public void ShowFightUi(Enemy enemy, Player player, int top,Map map)
     {
         UI ui = new UI();
+        Console.Clear();
         EntityStatUI entityStatUI = new EntityStatUI();
+        player.InFight();
+        map.Update();
+        map.mapRenderer.Draw(map);
         entityStatUI.ShowEntityStatUI(player);
         ui.ShowMessage($"Harcba keveredtél:{enemy.nev}", 1);
+
+     
         top = option.ShowOptions(ui);
         string valasz = ReadInput.Read();
         switch (valasz)
@@ -29,13 +35,17 @@ public class FightUi: IFightUi
                 ui.ShowMessage("Megtámadtad!", 2);
                 int[] hp = fightHandler.Fight(enemy, player);
                 ui.ShowMessage($"Megsebezted: {hp[0]}hp --> {hp[1]}hp", top+3);
+                Console.ReadKey();
                 if (hp[1] <= 0)
                 {
                     ui.ShowMessage($"Megölted: {enemy.nev}",top+3);
+                    player.OutFight();
+                    map.Update();
+                    map.mapRenderer.Draw(map);
                 }
                 else
                 {
-                    ShowFightUi(enemy, player);
+                    ShowFightUi(enemy, player,0,map);
                 }
 
                 break;
@@ -46,7 +56,7 @@ public class FightUi: IFightUi
                 break;
             default:
                 ui.ShowMessage("Ilyen opció nincs.",top);
-                ShowFightUi(enemy, player);
+                ShowFightUi(enemy, player,0,map);
                 break;
 
         }

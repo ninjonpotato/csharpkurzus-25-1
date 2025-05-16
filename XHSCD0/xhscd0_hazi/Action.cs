@@ -9,11 +9,8 @@ public class Action: IActions
         if (entity is Enemy)
         {
             FightUi fightUi = new FightUi();
-            player.InFight();
-            map.Update();
-            map.mapRenderer.Draw(map);
-            fightUi.ShowFightUi(entity as Enemy,player);
-            player.OutFight();
+            fightUi.ShowFightUi(entity as Enemy,player,0,map);
+          
             Console.ReadKey();
          
         }
